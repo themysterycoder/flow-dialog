@@ -74,30 +74,7 @@
       "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.5.1.tgz",
       "version": "3.5.1"
     },
-    "body-parser": {
-      "dependencies": {
-        "qs": {
-          "integrity": "sha512-eRzhrN1WSINYCDCbrz796z37LOe3m5tmW7RQf6oBntukAG1nmovJvhnwHHRMAfeoItc1m2Hk02WER2aQ/iqs+A==",
-          "resolved": "https://registry.npmjs.org/qs/-/qs-6.5.1.tgz",
-          "version": "6.5.1"
-        }
-      },
-      "integrity": "sha1-h2eKGdhLR9hZuDGZvVm84iKxBFQ=",
-      "requires": {
-        "bytes": "3.0.0",
-        "content-type": "1.0.4",
-        "debug": "2.6.9",
-        "depd": "1.1.2",
-        "http-errors": "1.6.3",
-        "iconv-lite": "0.4.19",
-        "on-finished": "2.3.0",
-        "qs": "6.5.1",
-        "raw-body": "2.3.2",
-        "type-is": "1.6.16"
-      },
-      "resolved": "https://registry.npmjs.org/body-parser/-/body-parser-1.18.2.tgz",
-      "version": "1.18.2"
-    },
+    "body-parser": "^1.18.3",
     "bson": {
       "integrity": "sha512-IQX9/h7WdMBIW/q/++tGd+emQr0XMdeZ6icnT/74Xk9fnabWn+gZgpE+9V+gujL3hhJOoNrnDVY7tWdzc7NUTg==",
       "resolved": "https://registry.npmjs.org/bson/-/bson-1.0.9.tgz",
