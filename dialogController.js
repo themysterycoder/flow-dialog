@@ -6,43 +6,49 @@ var aogApp = dialogflow({debug: true});
 const availableFood = ['apple', 'egg', 'flour', 'salt', 'butter', 'milk', 'banana', 'chicken', 'beef', 'pork', 'tau pok', 'pineapple', 'soup', 'spinach', 'prawn', 'lamb', 'chives', 'tomato', 'cheese', 'coffee'];
 function getRecipe(conv, params, granted) {
 
+  var ranOne = Math.floor(Math.random()* (availableFood.length - 1));
+  var ranTwo;
+  do {
+    ranTwo = Math.floor(Math.random()* (availableFood.length - 1));
+  }
+  while (ranOne == ranTwo)
+
   const foodApiOptions  = {
-    uri : 'http://7b70246a.ngrok.io/foodtofork/' + availableFood[Math.floor(Math.random()* (availableFood.length - 1))] + ' ' + availableFood[Math.floor(Math.random()* (availableFood.length - 1))] + ' ' + availableFood[Math.floor(Math.random()* (availableFood.length - 1))],
+    uri : 'http://7b70246a.ngrok.io/foodtofork/' + availableFood[ranOne] + ' ' + availableFood[ranTwo],
     json: true,
   }
   return new Promise(function (resolve, reject) {
     rp(foodApiOptions)
     .then((data)=>{
       const recipes = data.recipes;
-
-      if(!conv.surface.capabilities.has('actions.capability.SCREEN_OUTPUT')) {
-        conv.ask(`<speak>`+ recipes[0].title +`</speak>`);
-        resolve();
-      } else{
-        conv.ask(recipes[0].title + ' was found');
-        conv.ask(new BasicCard({
-          text: `This is a basic card.  Text in a basic card can include "quotes" and
-          most other unicode characters including emoji 📱.  Basic cards also support
-          some markdown formatting like *emphasis* or _italics_, **strong** or
-          __bold__, and ***bold itallic*** or ___strong emphasis___ as well as other
-          things like line  \nbreaks`, // Note the two spaces before '\n' required for
-                                      // a line break to be rendered in the card.
-          subtitle: '',
-          title: recipes[0].title,
-          buttons: new Button({
-            title: 'Go to Recipe',
-            url: recipes[0].source_url,
-          }),
-          image: new Image({
-            url: recipes[0].image_url,
-            alt: recipes[0].title,
-          }),
-        }));
-
-        resolve();
+      if(data.count > 0) {
+        if(!conv.surface.capabilities.has('actions.capability.SCREEN_OUTPUT')) {
+          conv.ask(`<speak>`+ recipes[0].title +`</speak>`);
+        } else{
+          conv.ask(recipes[0].title + ' was found');
+          conv.ask(new BasicCard({
+            text: recipes[0].title, 
+            subtitle: '',
+            title: recipes[0].title,
+            buttons: new Button({
+              title: 'Go to Recipe',
+              url: recipes[0].source_url,
+            }),
+            image: new Image({
+              url: recipes[0].image_url,
+              alt: recipes[0].title,
+            }),
+          }));
+        
+        }
+      } else {
+        conv.ask(`<speak>You poor <say-as interpret-as="expletive">poor man</say-as>. Get more stuff for your fridge.</speak>`);
+        
       }
 
+      resolve();
       });
+    
   });
 }
 
