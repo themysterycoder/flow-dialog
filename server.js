@@ -8,7 +8,7 @@ const rp = require('request-promise');
 
 const aogApp = dialogflow();
 
-agoApp.intent('GetRecipe', conv => {
+aogApp.intent('GetRecipe', conv => {
   conv.ask(`<speak>Jiak Simi?</speak>`);
 });
 
