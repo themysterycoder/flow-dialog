@@ -2,7 +2,7 @@ const {dialogflow, BasicCard, Button, Image, SimpleResponse} = require('actions-
 const rp = require('request-promise'); 
 
 
-var aogApp = dialogflow();
+var aogApp = dialogflow({debug: true});
 const foodApiOptions  = {
   uri : 'http://7b70246a.ngrok.io/foodtofork/apple chocolate',
   json: true,
@@ -20,7 +20,6 @@ function getRecipe(conv, params, granted) {
       } else{
         conv.ask(new SimpleResponse({
           textToSpeech: recipes[0].title + ' was found',
-          ssml: recipes[0].title + ' was found',
           displayText: recipes[0].title + ' was found', 
         }));
         conv.ask(new BasicCard({
