@@ -16,6 +16,7 @@ function getRecipe(conv, params, granted) {
 
       if(!conv.surface.capabilities.has('actions.capability.SCREEN_OUTPUT')) {
         conv.ask(`<speak>`+ recipes[0].title +`</speak>`);
+        resolve();
       } else{
         conv.ask(new BasicCard({
           text: `This is a basic card.  Text in a basic card can include "quotes" and
@@ -35,6 +36,8 @@ function getRecipe(conv, params, granted) {
             alt: recipes[0].title,
           }),
         }));
+
+        resolve();
       }
 
       });
