@@ -1,4 +1,4 @@
-const {dialogflow, BasicCard, Button, Image} = require('actions-on-google');
+const {dialogflow, BasicCard, Button, Image, SimpleResponse} = require('actions-on-google');
 const rp = require('request-promise'); 
 
 
@@ -18,6 +18,10 @@ function getRecipe(conv, params, granted) {
         conv.ask(`<speak>`+ recipes[0].title +`</speak>`);
         resolve();
       } else{
+        conv.ask(new SimpleResponse({
+          textToSpeech: recipes[0].title + ' was found',
+          displayText: recipes[0].title + ' was found', 
+        }));
         conv.ask(new BasicCard({
           text: `This is a basic card.  Text in a basic card can include "quotes" and
           most other unicode characters including emoji 📱.  Basic cards also support
