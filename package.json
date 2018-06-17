@@ -612,17 +612,7 @@
       "resolved": "https://registry.npmjs.org/request/-/request-2.87.0.tgz",
       "version": "2.87.0"
     },
-    "request-promise": {
-      "integrity": "sha1-0epG1lSm7k+O5qT+oQGMIpEZBLQ=",
-      "requires": {
-        "bluebird": "3.5.1",
-        "request-promise-core": "1.1.1",
-        "stealthy-require": "1.1.1",
-        "tough-cookie": "2.4.2"
-      },
-      "resolved": "https://registry.npmjs.org/request-promise/-/request-promise-4.2.2.tgz",
-      "version": "4.2.2"
-    },
+    "request-promise": "^4.2.2",
     "request-promise-core": {
       "integrity": "sha1-Pu4AssWqgyOc+wTFcA2jb4HNCLY=",
       "requires": {
