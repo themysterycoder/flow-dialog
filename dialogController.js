@@ -9,7 +9,32 @@ const foodApiOptions  = {
 }
 aogApp.intent('Default Welcome Intent - yes', conv => {
   rp(foodApiOptions).then((data)=>{
-    conv.ask(`<speak></speak>`);});
+    const recipes = data.recipes;
+
+    if(!conv.surface.capabilities.has('actions.capability.SCREEN_OUTPUT')) {
+      conv.ask(`<speak>`+ recipes[0].title +`</speak>`);
+    } else{
+      conv.ask(new BasicCard({
+        text: `This is a basic card.  Text in a basic card can include "quotes" and
+        most other unicode characters including emoji 📱.  Basic cards also support
+        some markdown formatting like *emphasis* or _italics_, **strong** or
+        __bold__, and ***bold itallic*** or ___strong emphasis___ as well as other
+        things like line  \nbreaks`, // Note the two spaces before '\n' required for
+                                     // a line break to be rendered in the card.
+        subtitle: '',
+        title: recipes[0].title,
+        buttons: new Button({
+          title: 'Go to Recipe',
+          url: recipes[0].source_url,
+        }),
+        image: new Image({
+          url: recipes[0].image_url,
+          alt: recipes[0].title,
+        }),
+      }));
+    }
+
+    });
 });
 
 aogApp.intent('Default Welcome Intent - no', conv => {
