@@ -20,6 +20,7 @@ function getRecipe(conv, params, granted) {
       } else{
         conv.ask(new SimpleResponse({
           textToSpeech: recipes[0].title + ' was found',
+          ssml: recipes[0].title + ' was found',
           displayText: recipes[0].title + ' was found', 
         }));
         conv.ask(new BasicCard({
