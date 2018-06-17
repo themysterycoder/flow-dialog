@@ -1,4 +1,4 @@
-const {dialogflow, BasicCard} = require('actions-on-google');
+const {dialogflow, BasicCard, Button, Image} = require('actions-on-google');
 const rp = require('request-promise'); 
 
 
