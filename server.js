@@ -12,4 +12,7 @@ aogApp.intent('GetRecipe', conv => {
   conv.ask(`<speak>Jiak Simi?</speak>`);
 });
 
-app.use(bodyparser.json(), aogApp).listen(3000);
+const PORT = process.env.PORT || 3000;
+
+app.use(bodyparser.json(), aogApp).listen(PORT, () => {
+  console.log(`Our app is running on port ${ PORT }`);});
