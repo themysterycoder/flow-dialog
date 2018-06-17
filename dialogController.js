@@ -16,14 +16,14 @@ aogApp.intent('Default Welcome Intent - no', conv => {
   conv.close(`<speak>
   <par>
     <media xml:id="text1" begin="0.0s">
-      <speak>Two brothers, in a van.</speak>
+      <speak>Two fat brothers, in a ice cream truck.</speak>
     </media>
     <media xml:id="sound1" begin="text1.end-0.2s" fadeOutDur="1.0s">
       <audio
         src="https://actions.google.com/sounds/v1/transportation/tires_squeal_continuous.ogg" clipBegin="30.0s" clipEnd="34.0s"/>
     </media>
     <media xml:id="text2" begin="sound1.end-1.0s">
-      <speak>And then a meteor hit.</speak>
+      <speak>And then a Tau Pok hit.</speak>
     </media>
     <media xml:id="sound2" begin="text2.end-0.2s" fadeOutDur="2.0s">
       <audio
@@ -37,7 +37,7 @@ aogApp.intent('Default Welcome Intent - no', conv => {
         src="https://actions.google.com/sounds/v1/foley/running_on_tile.ogg" clipEnd="3.0s"/>
     </media>
     <media xml:id="text4" begin="sound3.end-1.0s">
-      <speak>From giant cat monsters.</speak>
+      <speak>From giant Laksa monsters.</speak>
     </media>
     <media xml:id="sound4" begin="text4.end-0.2s" fadeOutDur="2.0s">
       <audio
