@@ -575,43 +575,7 @@
       "resolved": "https://registry.npmjs.org/regexp-clone/-/regexp-clone-0.0.1.tgz",
       "version": "0.0.1"
     },
-    "request": {
-      "dependencies": {
-        "tough-cookie": {
-          "integrity": "sha512-TZ6TTfI5NtZnuyy/Kecv+CnoROnyXn2DN97LontgQpCwsX2XyLYCC0ENhYkehSOwAp8rTQKc/NUIF7BkQ5rKLA==",
-          "requires": {
-            "punycode": "1.4.1"
-          },
-          "resolved": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.3.4.tgz",
-          "version": "2.3.4"
-        }
-      },
-      "integrity": "sha512-fcogkm7Az5bsS6Sl0sibkbhcKsnyon/jV1kF3ajGmF0c8HrttdKTPRT9hieOaQHA5HEq6r8OyWOo/o781C1tNw==",
-      "requires": {
-        "aws-sign2": "0.7.0",
-        "aws4": "1.7.0",
-        "caseless": "0.12.0",
-        "combined-stream": "1.0.6",
-        "extend": "3.0.1",
-        "forever-agent": "0.6.1",
-        "form-data": "2.3.2",
-        "har-validator": "5.0.3",
-        "http-signature": "1.2.0",
-        "is-typedarray": "1.0.0",
-        "isstream": "0.1.2",
-        "json-stringify-safe": "5.0.1",
-        "mime-types": "2.1.18",
-        "oauth-sign": "0.8.2",
-        "performance-now": "2.1.0",
-        "qs": "6.5.2",
-        "safe-buffer": "5.1.2",
-        "tough-cookie": "2.3.4",
-        "tunnel-agent": "0.6.0",
-        "uuid": "3.2.1"
-      },
-      "resolved": "https://registry.npmjs.org/request/-/request-2.87.0.tgz",
-      "version": "2.87.0"
-    },
+    "request": "^2.87.0",
     "request-promise": "^4.2.2",
     "request-promise-core": {
       "integrity": "sha1-Pu4AssWqgyOc+wTFcA2jb4HNCLY=",
