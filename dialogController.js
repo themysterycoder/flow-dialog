@@ -13,4 +13,4 @@ aogApp.intent('Default Welcome Intent - no', conv => {
 });
 
 
-modules.exports = aogApp;
+module.exports = aogApp;
