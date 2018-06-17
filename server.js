@@ -1,5 +1,5 @@
 const express = require('express');
-const aog = require('./dialogController')
+const aog = require('./dialogController.js')
 const app = express();
 
 

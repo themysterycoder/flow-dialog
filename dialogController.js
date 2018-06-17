@@ -9,4 +9,4 @@ agoApp.intent('GetRecipe', conv => {
 });
 
 
-modules.exports = {aogApp};
+modules.exports = aogApp;
