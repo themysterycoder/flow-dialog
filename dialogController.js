@@ -3,12 +3,13 @@ const rp = require('request-promise');
 
 
 var aogApp = dialogflow({debug: true});
-const foodApiOptions  = {
-  uri : 'http://7b70246a.ngrok.io/foodtofork/apple chocolate',
-  json: true,
-}
-
+const availableFood = ['apple', 'egg', 'flour', 'salt', 'butter', 'milk', 'banana', 'chicken', 'beef', 'pork', 'tau pok', 'pineapple', 'soup', 'spinach', 'prawn', 'lamb', 'chives', 'tomato', 'cheese', 'coffee'];
 function getRecipe(conv, params, granted) {
+
+  const foodApiOptions  = {
+    uri : 'http://7b70246a.ngrok.io/foodtofork/' + availableFood[Math.floor(Math.random()* (availableFood.length - 1))] + ' ' + availableFood[Math.floor(Math.random()* (availableFood.length - 1))] + ' ' + availableFood[Math.floor(Math.random()* (availableFood.length - 1))],
+    json: true,
+  }
   return new Promise(function (resolve, reject) {
     rp(foodApiOptions)
     .then((data)=>{
